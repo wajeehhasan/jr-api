@@ -1,13 +1,15 @@
 ﻿using AutoMapper;
+using DATA.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DATA.Models
+namespace LOGIC.Model
 {
-    public class Candidate
+    [AutoMap(typeof(Candidate))]
+    public class CandidateDTO
     {
         public string name { get; set; }
         public string phone { get; set; }

@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LOGIC.Model;
 
-namespace DATA.Models
+namespace jayride_api.Models
 {
+    [AutoMap(typeof(CandidateDTO))]
     public class Candidate
     {
         public string name { get; set; }
