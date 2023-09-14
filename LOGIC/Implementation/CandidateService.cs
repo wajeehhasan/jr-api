@@ -8,7 +8,7 @@ namespace LOGIC.Implementation
     public class CandidateService : ICandidate
     {
         //calling data layer candidate services
-        readonly ICandidateOperations _candidateOperations;
+        private readonly ICandidateOperations _candidateOperations;
         //creating an instance of AutoMapper to Map Data Layer Cadidate to Logic Layer Candidate Model
         private readonly IMapper _mapper;
 

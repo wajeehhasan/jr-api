@@ -15,6 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<ICandidate, CandidateService>();
 builder.Services.AddScoped<ICandidateOperations, CandidateOperations>();
+builder.Services.AddScoped<ILocationOperations, LocationOperations>();
+builder.Services.AddScoped<ILocationInterface, LocationServices>();
+builder.Services.AddScoped<IHttpOperations, HttpOperations>();
+builder.Services.AddHttpClient();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
