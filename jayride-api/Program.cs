@@ -1,8 +1,9 @@
 using DATA.Interface;
+using DATA.Models;
 using DATA.Services;
 using LOGIC.Implementation;
 using LOGIC.Interface;
-
+using LOGIC.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,11 +14,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddScoped<ICandidate, CandidateService>();
+builder.Services.AddScoped<ICandidateInterface, CandidateService>();
 builder.Services.AddScoped<ICandidateOperations, CandidateOperations>();
 builder.Services.AddScoped<ILocationOperations, LocationOperations>();
+
 builder.Services.AddScoped<ILocationInterface, LocationServices>();
 builder.Services.AddScoped<IHttpOperations, HttpOperations>();
+
+builder.Services.AddScoped<IListingOperations, ListingOperations>();
+builder.Services.AddScoped<IListingInterface, ListingService>();
+
+builder.Services.AddScoped(typeof(ICommonInterface<,>), typeof(CommonService<,>));
+
+/*builder.Logging.ClearProviders();
+builder.Logging.AddConsole();*/
+
 builder.Services.AddHttpClient();
 var app = builder.Build();
 

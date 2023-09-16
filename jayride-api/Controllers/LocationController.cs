@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
+using DATA.Models;
 using jayride_api.Models;
 using LOGIC.Interface;
 using LOGIC.Model;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
+using System.Net.Mime;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,18 +16,24 @@ namespace jayride_api.Controllers
     {
         private readonly Mapper _mapper;
         private readonly ILocationInterface _location;
-        public LocationController(ILocationInterface location)
+        private readonly ICommonInterface<LocationDTO,Location> _commonInterface;
+        public LocationController(ILocationInterface location, ICommonInterface<LocationDTO, Location> commonInterface)
         {
             var configuration = new MapperConfiguration(cfg => cfg.AddMaps("jayride-api"));
             _mapper = new Mapper(configuration);
             _location = location;
+            _commonInterface = commonInterface;
         }
 
         [HttpGet]
-        public async Task<Location> Location(string ip_address)
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<GenericResultSet<Location>> Location(string ip_address)
         {
-            Location location = _mapper.Map<Location>(await _location.GetLocation(ip_address));
-            return location;
+            GenericResultSet<Location> response = new();
+            var returnedResponse = await _location.GetLocation(ip_address);
+            response = _commonInterface.convertResultSet<Location>(returnedResponse, _mapper);
+            return response;
         }
     }
 }

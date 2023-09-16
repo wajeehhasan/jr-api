@@ -12,10 +12,10 @@ namespace jayride_api.Controllers
     [ApiController]
     public class CandidateController : ControllerBase
     {
-        private ICandidate _candidateService;
+        private ICandidateInterface _candidateService;
         
         private readonly IMapper _mapper;
-        public CandidateController(ICandidate candidateService)
+        public CandidateController(ICandidateInterface candidateService)
         {
             var configuration = new MapperConfiguration(cfg => cfg.AddMaps("jayride-api"));
             _mapper = new Mapper(configuration);
