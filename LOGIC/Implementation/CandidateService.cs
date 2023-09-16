@@ -5,7 +5,7 @@ using LOGIC.Model;
 
 namespace LOGIC.Implementation
 {
-    public class CandidateService : ICandidate
+    public class CandidateService : ICandidateInterface
     {
         //calling data layer candidate services
         private readonly ICandidateOperations _candidateOperations;

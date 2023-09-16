@@ -10,6 +10,6 @@ namespace LOGIC.Interface
 {
     public interface ILocationInterface
     {
-        Task<LocationDTO> GetLocation(string ip_address);
+        Task<GenericResultSet<LocationDTO>> GetLocation(string ip_address);
     }
 }

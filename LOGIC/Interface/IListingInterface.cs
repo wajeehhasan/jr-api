@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace LOGIC.Interface
 {
-    public interface ICandidate
+    public interface IListingInterface
     {
-        CandidateDTO GetCandidate();
+        Task<ListingDTO> GetPricedListings(double noOfPassengers);
     }
 }

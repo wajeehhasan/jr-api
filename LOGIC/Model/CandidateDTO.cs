@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LOGIC.Model
 {
-    [AutoMap(typeof(Candidate))]
+    [AutoMap(typeof(Candidates))]
     public class CandidateDTO
     {
         public string name { get; set; }

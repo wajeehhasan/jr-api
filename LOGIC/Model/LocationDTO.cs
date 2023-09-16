@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace LOGIC.Model
 {
 
-    [AutoMap(typeof(Location))]
+    [AutoMap(typeof(Locations))]
     public class LocationDTO
     {
         public string city { get; set; }

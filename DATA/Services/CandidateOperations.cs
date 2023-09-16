@@ -10,10 +10,10 @@ namespace DATA.Services
 {
     public class CandidateOperations : ICandidateOperations
     {
-        public Candidate GetCandidate()
+        public Candidates GetCandidate()
         {
             //this is returning sample data and can be replaced by a database call
-            return new Candidate { name = "test", phone = "test" }; 
+            return new Candidates { name = "test", phone = "test" }; 
         }
     }
 }

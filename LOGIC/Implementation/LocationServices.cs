@@ -10,19 +10,24 @@ namespace LOGIC.Implementation
     public class LocationServices : ILocationInterface
     {
         private readonly ILocationOperations _locationOperations;
+        private readonly IHttpOperations _httpOperations;
+        private readonly ICommonInterface<Locations,LocationDTO> _commonInterface;
         private readonly IMapper _mapper;
-        public LocationServices(ILocationOperations locationOperations)
+        public LocationServices(ILocationOperations locationOperations, IHttpOperations httpOperations, ICommonInterface<Locations, LocationDTO> commonInterface)
         {
             _locationOperations = locationOperations;
             var configuration = new MapperConfiguration(cfg => cfg.AddMaps("LOGIC"));
             _mapper = new Mapper(configuration);
+            _httpOperations = httpOperations;
+            _commonInterface = commonInterface;
         }
 
-        public async Task<LocationDTO> GetLocation(string ip_address)
+        public async Task<GenericResultSet<LocationDTO>> GetLocation(string ip_address)
         {
-            var x = await _locationOperations.GetIpDetailsAsync(ip_address);
-            LocationDTO location = _mapper.Map<LocationDTO>(x);
-            return location;
+            GenericResultSet<LocationDTO> responseDTO = new();
+            var ipDetails = await _locationOperations.GetIpDetailsAsync(ip_address);
+            responseDTO = _commonInterface.convertResultSet<LocationDTO>(ipDetails, _mapper);
+            return responseDTO;
         }
     }
 }

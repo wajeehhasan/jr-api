@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DATA.Models
 {
-    public class Candidate
+    public class Candidates
     {
         public string name { get; set; }
         public string phone { get; set; }

@@ -1,14 +1,14 @@
-﻿using DATA.Models;
+﻿using LOGIC.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DATA.Interface
+namespace LOGIC.Interface
 {
-    public interface ICandidateOperations
+    public interface ICandidateInterface
     {
-        Candidates GetCandidate();
+        CandidateDTO GetCandidate();
     }
 }
