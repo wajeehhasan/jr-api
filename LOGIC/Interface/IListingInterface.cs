@@ -1,4 +1,5 @@
-﻿using LOGIC.Model;
+﻿using DATA.Models;
+using LOGIC.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace LOGIC.Interface
 {
     public interface IListingInterface
     {
-        Task<ListingDTO> GetPricedListings(double noOfPassengers);
+        Task<GenericResultSet<ListingsLOGIC>> GetPricedListings(double noOfPassengers);
     }
 }

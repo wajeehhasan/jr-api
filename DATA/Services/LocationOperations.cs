@@ -20,9 +20,9 @@ namespace DATA.Services
             _config = config;
             _httpOperations = httpOperations;
         }
-        public async Task<GenericResultSet<Locations>> GetIpDetailsAsync(string ip_address)
+        public async Task<GenericResultSet<LocationData>> GetIpDetailsAsync(string ip_address)
         {
-            GenericResultSet<Locations> response = new();
+            GenericResultSet<LocationData> response = new();
 
             var url = _config.GetSection("IpStackUrl").Value + ip_address;
             var queryParams = new Dictionary<string, string>(){
@@ -32,7 +32,7 @@ namespace DATA.Services
 
             var returnedObj = await _httpOperations.GetHttpResponse(url, queryParams);
 
-            response = _httpOperations.GenericResponseGenerate<Locations>(returnedObj);
+            response = _httpOperations.GenericResponseGenerate<LocationData>(returnedObj);
             return response;
         }
 

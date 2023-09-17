@@ -20,7 +20,7 @@ namespace DATA.Models
         public bool is_eu { get; set; }
     }
 
-    public class Locations
+    public class LocationData
     {
         public string ip { get; set; }
         public string type { get; set; }

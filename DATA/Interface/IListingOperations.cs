@@ -5,6 +5,6 @@ namespace DATA.Interface
 {
     public interface IListingOperations
     {
-        Task<GenericResultSet<Listing>> GetAllListings();
+        Task<GenericResultSet<ListingData>> GetAllListings();
     }
 }

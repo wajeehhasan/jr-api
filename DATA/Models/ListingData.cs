@@ -13,7 +13,7 @@ namespace DATA.Models
         public VehicleType vehicleType { get; set; }
     }
 
-    public class Listing
+    public class ListingData
     {
         public string from { get; set; }
         public string to { get; set; }

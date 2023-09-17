@@ -9,6 +9,6 @@ namespace DATA.Interface
 {
     public interface ICandidateOperations
     {
-        Candidates GetCandidate();
+        GenericResultSet<CandidateData> GetCandidate();
     }
 }

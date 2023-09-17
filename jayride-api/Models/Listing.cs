@@ -12,7 +12,7 @@ namespace jayride_api.Models
         public VehicleType vehicleType { get; set; }
     }
 
-    [AutoMap(typeof(ListingDTO))]
+    [AutoMap(typeof(ListingsLOGIC))]
     public class Listing
     {
         public string from { get; set; }

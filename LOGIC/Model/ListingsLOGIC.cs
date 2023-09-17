@@ -13,8 +13,8 @@ namespace LOGIC.Model
         public VehicleType vehicleType { get; set; }
     }
 
-    [AutoMap(typeof(Listing))]
-    public class ListingDTO
+    [AutoMap(typeof(ListingData))]
+    public class ListingsLOGIC
     {
         public string from { get; set; }
         public string to { get; set; }

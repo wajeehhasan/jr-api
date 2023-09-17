@@ -1,4 +1,5 @@
-﻿using LOGIC.Model;
+﻿using DATA.Models;
+using LOGIC.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace LOGIC.Interface
 {
     public interface ICandidateInterface
     {
-        CandidateDTO GetCandidate();
+        GenericResultSet<CandidateLOGIC> GetCandidate();
     }
 }

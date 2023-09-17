@@ -18,12 +18,12 @@ namespace DATA.Services
             _config = config;
     
         }
-        public async Task<GenericResultSet<Listing>> GetAllListings()
+        public async Task<GenericResultSet<ListingData>> GetAllListings()
         {
-            GenericResultSet<Listing> response = new();
+            GenericResultSet<ListingData> response = new();
             var url = _config.GetSection("JayrideChallengeApi").Value;
             var returnedObject = await _httpOperations.GetHttpResponse(url);
-            response = _httpOperations.GenericResponseGenerate<Listing>(returnedObject);
+            response = _httpOperations.GenericResponseGenerate<ListingData>(returnedObject);
             return response;
         }
     }

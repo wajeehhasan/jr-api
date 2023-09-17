@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace LOGIC.Model
 {
 
-    [AutoMap(typeof(Locations))]
-    public class LocationDTO
+    [AutoMap(typeof(LocationData))]
+    public class LocationLOGIC
     {
         public string city { get; set; }
     }

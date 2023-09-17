@@ -4,6 +4,6 @@ namespace DATA.Interface
 {
     public interface ILocationOperations
     {
-        Task<GenericResultSet<Locations>> GetIpDetailsAsync(string ip_address);
+        Task<GenericResultSet<LocationData>> GetIpDetailsAsync(string ip_address);
     }
 }

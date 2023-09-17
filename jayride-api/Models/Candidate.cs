@@ -3,7 +3,7 @@ using LOGIC.Model;
 
 namespace jayride_api.Models
 {
-    [AutoMap(typeof(CandidateDTO))]
+    [AutoMap(typeof(CandidateLOGIC))]
     public class Candidate
     {
         public string name { get; set; }

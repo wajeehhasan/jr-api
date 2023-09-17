@@ -16,8 +16,8 @@ namespace jayride_api.Controllers
     {
         private readonly Mapper _mapper;
         private readonly ILocationInterface _location;
-        private readonly ICommonInterface<LocationDTO,Location> _commonInterface;
-        public LocationController(ILocationInterface location, ICommonInterface<LocationDTO, Location> commonInterface)
+        private readonly ICommonInterface<LocationLOGIC,Location> _commonInterface;
+        public LocationController(ILocationInterface location, ICommonInterface<LocationLOGIC, Location> commonInterface)
         {
             var configuration = new MapperConfiguration(cfg => cfg.AddMaps("jayride-api"));
             _mapper = new Mapper(configuration);
