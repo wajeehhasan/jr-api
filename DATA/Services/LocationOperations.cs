@@ -1,12 +1,6 @@
 ﻿using DATA.Interface;
 using DATA.Models;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Net.Http.Headers;
-using Newtonsoft.Json;
-using System.Runtime.CompilerServices;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Web;
 
 namespace DATA.Services
 {

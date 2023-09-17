@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using DATA.Models;
-using DATA.Services;
 using jayride_api.Models;
 using LOGIC.Interface;
 using LOGIC.Model;

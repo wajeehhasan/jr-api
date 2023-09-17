@@ -4,7 +4,6 @@ using jayride_api.Models;
 using LOGIC.Interface;
 using LOGIC.Model;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 using System.Net.Mime;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

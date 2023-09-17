@@ -1,8 +1,7 @@
 ﻿using DATA.Interface;
 using DATA.Models;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+
 
 
 namespace DATA.Services

@@ -1,15 +1,8 @@
 ﻿using DATA.Interface;
 using DATA.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+
 using System.Web;
-using Microsoft.Extensions.Logging;
+
 using Newtonsoft.Json;
 
 namespace DATA.Services
