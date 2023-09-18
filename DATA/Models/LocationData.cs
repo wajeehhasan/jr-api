@@ -10,7 +10,7 @@ namespace DATA.Models
 
     public class LocationDetails
     {
-        public int geoname_id { get; set; }
+        public int? geoname_id { get; set; }
         public string capital { get; set; }
         public List<Language> languages { get; set; }
         public string country_flag { get; set; }
